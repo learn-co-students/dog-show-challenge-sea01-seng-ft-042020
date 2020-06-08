@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     hidden_id.type = 'hidden'
     hidden_id.name = 'dog_id'
     dog_form.appendChild(hidden_id)
-    dog_form.hidden = true
+    dog_form.parentNode.hidden = true
 
     function addDog(dog){
         const table = document.querySelector("table")
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function addEditButton(button) {
         button.addEventListener("click", function(event){
-            dog_form.hidden = false
+            dog_form.parentNode.hidden = false
             
             console.log(event.target.id)
             dog_form.name.value = event.target.parentNode.parentNode.querySelector(".name").innerText
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
             event.target.sex.value = ''
             event.target.dog_id.value = ''
 
-            event.target.hidden = true
+            event.target.parentNode.hidden = true
         })
     }
     
